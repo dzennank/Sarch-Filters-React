@@ -1,6 +1,6 @@
 import SearchFilter from './SearchFilter';
 import './App.css';
-import './SearchFilter.css';
+
 
 function App() {
   return (
