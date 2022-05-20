@@ -15,6 +15,18 @@ const list = [
 const SearchFilter = () => {
 
     const [filterList, setFilterList] = useState(list)
+
+    const HandleSearch = (event) => {
+        if(event.target.value === "") {
+            setFilterList(list);
+            
+        }
+
+        const filteredValues = list.filter(
+            (item) => item.indexOf(event.target.value) !== -1
+        )
+        setFilterList(filteredValues);
+    }
     
   return (
     <div style={{display:'flex', 
@@ -25,7 +37,7 @@ const SearchFilter = () => {
     height: '100vh', }}>
         <form>
         <label>Search Fruits</label><br />
-        <input name='search' type='text'/>
+        <input name='search' type='text' onChange={HandleSearch}/>
         </form>
     </div>
   )
